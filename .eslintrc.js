@@ -21,5 +21,14 @@ module.exports = {
     'no-console': 'off',
     'vue/max-attributes-per-line': 'off',
     'prettier/prettier': ['error']
-  }
+  },
+  overrides: [
+    {
+      files: ["*.ts", "*.vue"],
+      parserOptions: {
+        parser: "typescript-eslint-parser"
+      },
+      plugins: ['vue', 'prettier', 'typescript']
+    }
+  ]
 };
