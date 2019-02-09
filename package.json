@@ -19,7 +19,6 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "nuxt": "^2.4.3",
-    "nuxt-property-decorator": "^2.0.1",
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^7.3.0"
   },
