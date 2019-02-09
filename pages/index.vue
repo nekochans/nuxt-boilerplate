@@ -21,17 +21,22 @@
         </a>
       </div>
     </div>
+    <HelloWorld />
   </section>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue';
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator';
+  import Logo from '~/components/Logo.vue';
+  import HelloWorld from '~/components/HelloWorld.vue';
 
-export default {
-  components: {
-    Logo
-  }
-};
+  @Component({
+    components: {
+      Logo,
+      HelloWorld
+    }
+  })
+  export default class extends Vue {}
 </script>
 
 <style>
