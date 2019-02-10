@@ -4,9 +4,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2017",
+    "rootDir": "src",
     "outDir": "dist"
   },
   "include": [
-    "server/index.ts"
+    "src/server/server.ts"
   ]
 }
