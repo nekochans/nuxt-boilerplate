@@ -27,8 +27,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Logo from '~/components/Logo.vue';
-import HelloWorld from '~/components/HelloWorld.vue';
+import Logo from '@/components/Logo.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
 
 @Component({
   components: {

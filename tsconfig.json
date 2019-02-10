@@ -16,13 +16,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./src*"]
     },
     "typeRoots": [
       "node_modules/@types",
-      "types"
+      "src/types"
     ],
     "lib": [
       "dom",

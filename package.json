@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --watch server",
     "build": "rm -rf .nuxt dist && tsc -p tsconfig.server.json && nuxt build",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/server/server.js",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "format": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
@@ -40,6 +40,7 @@
     "prettier": "1.16.4",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
+    "tsconfig-paths": "^3.8.0",
     "typescript": "^3.3.3",
     "typescript-eslint-parser": "^22.0.0"
   }
