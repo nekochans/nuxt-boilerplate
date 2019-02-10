@@ -1,17 +1,17 @@
 import express from 'express';
 import consola from 'consola';
 const { Nuxt, Builder } = require('nuxt');
-const app = express();
 const host: string = process.env.HOST || '127.0.0.1';
 const port: number = Number(process.env.PORT) || 3000;
 
-app.set('port', port);
+export default async function () {
+  const app = express();
+  app.set('port', port);
 
-// Import and Set Nuxt.js options
-const config = require('../nuxt.config.js');
-config.dev = !(process.env.NODE_ENV === 'production');
+  // Import and Set Nuxt.js options
+  const config = require('../nuxt.config.js');
+  config.dev = !(process.env.NODE_ENV === 'production');
 
-async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
 
@@ -37,4 +37,3 @@ async function start() {
     badge: true
   });
 }
-start();
