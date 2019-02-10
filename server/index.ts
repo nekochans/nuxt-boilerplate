@@ -1,14 +1,14 @@
-const express = require('express');
-const consola = require('consola');
+import express from 'express';
+import consola from 'consola';
 const { Nuxt, Builder } = require('nuxt');
 const app = express();
-const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3000;
+const host: string = process.env.HOST || '127.0.0.1';
+const port: number = Number(process.env.PORT) || 3000;
 
 app.set('port', port);
 
 // Import and Set Nuxt.js options
-let config = require('../nuxt.config.js');
+const config = require('../nuxt.config.js');
 config.dev = !(process.env.NODE_ENV === 'production');
 
 async function start() {
@@ -25,7 +25,13 @@ async function start() {
   app.use(nuxt.render);
 
   // Listen the server
-  app.listen(port, host);
+  app.listen(port, host, (error: Error) => {
+    if (error) {
+      console.error(error);
+      throw error;
+    }
+  });
+
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true
