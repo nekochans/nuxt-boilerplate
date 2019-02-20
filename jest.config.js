@@ -1,5 +1,13 @@
 module.exports = {
-  collectCoverageFrom: ['src/**/*.{ts,tsx,vue}'],
+  collectCoverageFrom: [
+    'src/components/*.{ts,tsx,vue}',
+    'src/layouts/*.{ts,tsx,vue}',
+    'src/middleware/*.{ts,tsx,vue}',
+    'src/pages/*.{ts,tsx,vue}',
+    'src/plugins/*.{ts,tsx,vue}',
+    'src/server/*.{ts,tsx,vue}',
+    'src/store/*.{ts,tsx,vue}',
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1'
