@@ -1,10 +1,16 @@
-import express from 'express';
+import express, { Router } from 'express';
 import consola from 'consola';
+import weather from './api/weather';
+import animals from './api/animals';
+const router = Router();
 const { Nuxt, Builder } = require('nuxt');
 const host: string = process.env.HOST || '127.0.0.1';
 const port: number = Number(process.env.PORT) || 3000;
 
-export default async function () {
+router.use(weather);
+router.use(animals);
+
+export default async function() {
   const app = express();
   app.set('port', port);
 
@@ -21,6 +27,7 @@ export default async function () {
     await builder.build();
   }
 
+  app.use('/api', router);
   // Give nuxt middleware to express
   app.use(nuxt.render);
 
