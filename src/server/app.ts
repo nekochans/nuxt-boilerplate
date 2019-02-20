@@ -10,7 +10,7 @@ const port: number = Number(process.env.PORT) || 3000;
 router.use(weather);
 router.use(animals);
 
-export default async function () {
+export default async function() {
   const app = express();
   app.set('port', port);
 
