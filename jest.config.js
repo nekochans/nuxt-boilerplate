@@ -9,6 +9,5 @@ module.exports = {
     '.*\\.(vue)$': 'vue-jest'
   },
   moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
-  roots: ['test'],
   verbose: true
 };
