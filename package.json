@@ -9,7 +9,7 @@
     "build": "rm -rf .nuxt dist && tsc -p tsconfig.server.json && nuxt build",
     "start": "cross-env NODE_ENV=production node dist/server/server.js",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "format": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "test": "jest --config=jest.config.js",
     "test:coverage": "jest --config=jest.config.js --collectCoverage=true",
