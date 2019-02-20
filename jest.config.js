@@ -1,4 +1,7 @@
 module.exports = {
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx,vue}"
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1'
