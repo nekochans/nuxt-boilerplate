@@ -2,9 +2,9 @@
   <section class="container">
     <div>
       <ul>
-        <cat />
-        <logo />
-        <dog />
+        <Cat />
+        <Logo />
+        <Dog />
       </ul>
       <h1 class="title">
         nuxt-boilerplate
@@ -25,7 +25,6 @@
         </a>
       </div>
     </div>
-    <HelloWorld />
   </section>
 </template>
 
