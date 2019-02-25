@@ -14,7 +14,9 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-light">Counter</a>
+            <a class="button is-light">
+              <nuxt-link to="/counter">Counter</nuxt-link>
+            </a>
           </div>
         </div>
       </div>
