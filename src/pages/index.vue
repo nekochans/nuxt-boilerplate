@@ -1,7 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <logo />
+      <ul>
+        <cat />
+        <logo />
+        <dog />
+      </ul>
       <h1 class="title">
         nuxt-boilerplate
       </h1>
@@ -28,18 +32,24 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Logo from '../components/Logo.vue';
-import HelloWorld from '../components/HelloWorld.vue';
+import Cat from '../components/Cat.vue';
+import Dog from '../components/Dog.vue';
 
 @Component({
   components: {
     Logo,
-    HelloWorld
+    Cat,
+    Dog
   }
 })
 export default class extends Vue {}
 </script>
 
-<style>
+<style scoped>
+ul {
+  display: flex;
+}
+
 .container {
   min-height: 100vh;
   display: flex;
