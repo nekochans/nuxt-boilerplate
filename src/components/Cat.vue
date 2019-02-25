@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cat">
     {{ message }}
   </div>
 </template>
@@ -8,7 +8,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class HelloWorld extends Vue {
-  message: string = 'Hello world !';
+export default class Cat extends Vue {
+  message: string = '🐱';
 }
 </script>
+
+<style scoped>
+.cat {
+  font-size: 10em;
+}
+</style>
