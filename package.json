@@ -50,6 +50,7 @@
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.3.3",
     "typescript-eslint-parser": "^22.0.0",
-    "vue-jest": "^3.0.3"
+    "vue-jest": "^3.0.3",
+    "vuex-class": "^0.3.1"
   }
 }
