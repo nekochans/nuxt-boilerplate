@@ -2,7 +2,7 @@
   <div class="container">
     <div class="result">
       {{ prefixMessage() }}
-      {{ currentCounter.counter }}
+      {{ currentCounter().counter }}
       {{ suffixMessage() }}
     </div>
     <button class="button is-info increment" @click="increment">
@@ -16,25 +16,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default Vue.extend({
   computed: {
-    currentCounter() {
-      return this.$store.getters['counter/currentCounter']();
-    }
+    ...mapGetters('counter', ['currentCounter'])
   },
   methods: {
-    prefixMessage() {
+    ...mapActions('counter', ['increment', 'decrement']),
+    prefixMessage(): string {
       return '🐱が';
     },
-    suffixMessage() {
+    suffixMessage(): string {
       return '匹いる。';
-    },
-    increment() {
-      this.$store.dispatch('counter/increment');
-    },
-    decrement() {
-      this.$store.dispatch('counter/decrement');
     }
   }
 });
