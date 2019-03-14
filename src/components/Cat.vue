@@ -5,12 +5,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue, { ComponentOptions } from 'vue';
 
-@Component
-export default class Cat extends Vue {
-  message: string = '🐱';
+interface ICat extends Vue {
+  message: string;
 }
+
+export { ICat as interface };
+
+export default {
+  data() {
+    return {
+      message: '🐱'
+    };
+  }
+} as ComponentOptions<ICat>;
 </script>
 
 <style scoped>
