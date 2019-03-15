@@ -1,4 +1,5 @@
 import { ActionTree, MutationTree, GetterTree, ActionContext } from 'vuex';
+import { RootState } from './index';
 
 export interface State {
   counter: number;
@@ -13,7 +14,7 @@ export const state = (): State => ({
   counter: 0
 });
 
-export const getters: GetterTree<State, {}> = {
+export const getters: GetterTree<State, RootState> = {
   currentCounter: state => () => {
     return { counter: state.counter };
   }
@@ -24,7 +25,7 @@ export interface Actions<S, R> extends ActionTree<S, R> {
   decrement(context: ActionContext<S, R>): void;
 }
 
-export const actions: Actions<State, {}> = {
+export const actions: Actions<State, RootState> = {
   increment: ({ commit }) => {
     commit(types.INCREMENT);
   },
