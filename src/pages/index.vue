@@ -29,19 +29,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import Logo from '../components/Logo.vue';
 import Cat from '../components/Cat.vue';
 import Dog from '../components/Dog.vue';
 
-@Component({
+export default Vue.extend({
   components: {
     Logo,
     Cat,
     Dog
   }
-})
-export default class extends Vue {}
+});
 </script>
 
 <style scoped>
