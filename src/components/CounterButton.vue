@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button class="button is-info increment" @click="increment">
+    <button class="button is-info counter-button" @click="increment">
       increment
     </button>
-    <button class="button is-danger decrement" @click="decrement">
+    <button class="button is-danger counter-button" @click="decrement">
       decrement
     </button>
   </div>
@@ -20,4 +20,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.counter-button {
+  margin: 10px;
+}
+</style>
