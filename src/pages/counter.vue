@@ -1,35 +1,19 @@
 <template>
   <div class="container">
-    <div class="result">
-      {{ prefixMessage() }}
-      {{ currentCounter().count }}
-      {{ suffixMessage() }}
-    </div>
-    <button class="button is-info increment" @click="increment">
-      increment
-    </button>
-    <button class="button is-danger decrement" @click="decrement">
-      decrement
-    </button>
+    <CurrentCount />
+    <CounterButton />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters, mapActions } from 'vuex';
+import CurrentCount from '../components/CurrentCount.vue';
+import CounterButton from '../components/CounterButton.vue';
 
 export default Vue.extend({
-  computed: {
-    ...mapGetters('counter', ['currentCounter'])
-  },
-  methods: {
-    ...mapActions('counter', ['increment', 'decrement']),
-    prefixMessage(): string {
-      return '🐱が';
-    },
-    suffixMessage(): string {
-      return '匹いる。';
-    }
+  components: {
+    CurrentCount,
+    CounterButton
   }
 });
 </script>
@@ -41,17 +25,5 @@ export default Vue.extend({
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.result {
-  font-size: 200%;
-}
-
-.increment {
-  margin: 10px;
-}
-
-.decrement {
-  margin: 10px;
 }
 </style>
