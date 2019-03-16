@@ -1,0 +1,32 @@
+<template>
+  <div class="current-count">
+    {{ prefixMessage() }}
+    {{ currentCounter().count }}
+    {{ suffixMessage() }}
+  </div>
+</template>
+
+<script lang="ts">
+import { mapGetters } from 'vuex';
+
+export default {
+  name: 'CurrentCount',
+  computed: {
+    ...mapGetters('counter', ['currentCounter'])
+  },
+  methods: {
+    prefixMessage(): string {
+      return '🐱が';
+    },
+    suffixMessage(): string {
+      return '匹いる。';
+    }
+  }
+};
+</script>
+
+<style scoped>
+.current-count {
+  font-size: 200%;
+}
+</style>
