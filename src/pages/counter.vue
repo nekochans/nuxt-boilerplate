@@ -2,7 +2,7 @@
   <div class="container">
     <div class="result">
       {{ prefixMessage() }}
-      {{ currentCounter().counter }}
+      {{ currentCounter().count }}
       {{ suffixMessage() }}
     </div>
     <button class="button is-info increment" @click="increment">

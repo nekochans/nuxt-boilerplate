@@ -2,7 +2,7 @@ import { ActionTree, MutationTree, GetterTree, ActionContext } from 'vuex';
 import { RootState } from './index';
 
 export interface State {
-  counter: number;
+  count: number;
 }
 
 export const types = {
@@ -11,12 +11,12 @@ export const types = {
 };
 
 export const state = (): State => ({
-  counter: 0
+  count: 0
 });
 
 export const getters: GetterTree<State, RootState> = {
   currentCounter: state => () => {
-    return { counter: state.counter };
+    return { count: state.count };
   }
 };
 
@@ -35,10 +35,10 @@ export const actions: Actions<State, RootState> = {
 };
 
 export const mutations: MutationTree<State> = {
-  [types.INCREMENT]: (state): void => {
-    state.counter++;
+  [types.INCREMENT]: (state: State): void => {
+    state.count++;
   },
-  [types.DECREMENT]: (state): void => {
-    state.counter--;
+  [types.DECREMENT]: (state: State): void => {
+    state.count--;
   }
 };

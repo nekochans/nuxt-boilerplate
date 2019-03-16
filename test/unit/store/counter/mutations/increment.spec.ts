@@ -3,10 +3,10 @@ const { INCREMENT } = mutations;
 
 describe('store/counter/actions/increment', () => {
   it('should have been called the specified mutation', () => {
-    const state = { counter: 0 };
+    const state = { count: 0 };
 
     INCREMENT(state, {});
 
-    expect(state.counter).toEqual(1);
+    expect(state.count).toEqual(1);
   });
 });
