@@ -1,7 +1,9 @@
 import express, { Router } from 'express';
+import cookieParser from 'cookie-parser';
 import consola from 'consola';
 import weather from './api/weather';
 import animals from './api/animals';
+import oauth from './auth/oauth';
 const router = Router();
 const { Nuxt, Builder } = require('nuxt');
 const host: string = process.env.HOST || '127.0.0.1';
@@ -9,6 +11,7 @@ const port: number = Number(process.env.PORT) || 3000;
 
 router.use(weather);
 router.use(animals);
+router.use(oauth);
 
 export default async function() {
   const app = express();
@@ -27,7 +30,9 @@ export default async function() {
     await builder.build();
   }
 
+  app.use(cookieParser());
   app.use('/api', router);
+  app.use('/oauth', router);
   // Give nuxt middleware to express
   app.use(nuxt.render);
 
