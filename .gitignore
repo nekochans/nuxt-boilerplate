@@ -80,3 +80,7 @@ dist
 # IDE
 .idea
 nuxt-boilerplate.iml
+
+# env File
+.env
+.envrc
