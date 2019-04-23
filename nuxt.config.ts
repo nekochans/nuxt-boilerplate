@@ -1,6 +1,7 @@
+import NuxtConfiguration from '@nuxt/config';
 const pkg = require('./package');
 
-module.exports = {
+const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src/',
 
@@ -59,16 +60,19 @@ module.exports = {
         }
       }
     },
-    useForkTsChecker: true,
+    typescript: {
+      typeCheck: true
+    },
     /*
      ** You can extend webpack config here
      */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
+        if (!config.module) return;
         config.module.rules.push({
           enforce: 'pre',
-          test: /\.(js|vue|ts)$/,
+          test: /\.(js|ts|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
@@ -76,3 +80,5 @@ module.exports = {
     }
   }
 };
+
+export default nuxtConfig;

@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
 import consola from 'consola';
+import config from '../../nuxt.config';
 import weather from './api/weather';
 import animals from './api/animals';
 import oauth from './auth/oauth';
@@ -13,13 +14,11 @@ router.use(weather);
 router.use(animals);
 router.use(oauth);
 
+config.dev = !(process.env.NODE_ENV === 'production');
+
 export default async function() {
   const app = express();
   app.set('port', port);
-
-  // Import and Set Nuxt.js options
-  const config = require('../../nuxt.config.js');
-  config.dev = !(process.env.NODE_ENV === 'production');
 
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
@@ -28,6 +27,8 @@ export default async function() {
   if (config.dev) {
     const builder = new Builder(nuxt);
     await builder.build();
+  } else {
+    await nuxt.ready();
   }
 
   app.use(cookieParser());
