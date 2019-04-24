@@ -1,5 +1,9 @@
 import { Router, Request, Response } from 'express';
-import { createAuthorizationState, createAuthorizationUrl } from '../auth';
+import {
+  createAuthorizationState,
+  createAuthorizationUrl,
+  issueAccessToken
+} from '../auth';
 
 const router = Router();
 
@@ -26,8 +30,18 @@ router.get('/callback', async (req: Request, res: Response) => {
     // TODO 認可コードが含まれない場合は何らかのエラー処理を行う
   }
 
-  // TODO 仮実装なので後でトークン発行処理に置き換える
-  return res.status(200).json({ code: req.query.code });
+  await issueAccessToken(req.query.code)
+    .then(tokenResponse => {
+      // TODO 仮実装なので後でログイン後のページにredirectするように変更する
+      return res
+        .status(200)
+        .json({ code: req.query.code, token: tokenResponse.token });
+    })
+    .catch(error => {
+      return res
+        .status(error.response.status)
+        .json({ message: error.response.data.message });
+    });
 });
 
 export default router;
