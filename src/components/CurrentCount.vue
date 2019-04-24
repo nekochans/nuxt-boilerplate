@@ -7,9 +7,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { mapGetters } from 'vuex';
 
-export default {
+export default Vue.extend({
   name: 'CurrentCount',
   computed: {
     ...mapGetters('counter', ['currentCounter'])
@@ -22,7 +23,7 @@ export default {
       return '匹いる。';
     }
   }
-};
+});
 </script>
 
 <style scoped>

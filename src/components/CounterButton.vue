@@ -10,14 +10,15 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import { mapActions } from 'vuex';
 
-export default {
+export default Vue.extend({
   name: 'CounterButton',
   methods: {
     ...mapActions('counter', ['increment', 'decrement'])
   }
-};
+});
 </script>
 
 <style scoped>

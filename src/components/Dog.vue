@@ -5,21 +5,15 @@
 </template>
 
 <script lang="ts">
-import Vue, { ComponentOptions } from 'vue';
+import Vue from 'vue';
 
-interface IDog extends Vue {
-  message: string;
-}
-
-export { IDog as interface };
-
-export default {
+export default Vue.extend({
   data() {
     return {
       message: '🐶'
     };
   }
-} as ComponentOptions<IDog>;
+});
 </script>
 
 <style scoped>
