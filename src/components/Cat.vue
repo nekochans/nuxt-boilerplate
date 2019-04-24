@@ -5,21 +5,15 @@
 </template>
 
 <script lang="ts">
-import Vue, { ComponentOptions } from 'vue';
+import Vue from 'vue';
 
-interface ICat extends Vue {
-  message: string;
-}
-
-export { ICat as interface };
-
-export default {
+export default Vue.extend({
   data() {
     return {
       message: '🐱'
     };
   }
-} as ComponentOptions<ICat>;
+});
 </script>
 
 <style scoped>
