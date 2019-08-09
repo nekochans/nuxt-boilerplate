@@ -25,6 +25,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
     "@types/cookie-parser": "^1.4.1",
     "@types/eslint": "^4.16.7",
     "@types/eslint-plugin-prettier": "^2.2.0",
@@ -33,6 +34,7 @@
     "@types/node": "^12.7.1",
     "@types/prettier": "^1.18.1",
     "@types/uuid": "^3.4.5",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "^7.0.0-bridge.0",
