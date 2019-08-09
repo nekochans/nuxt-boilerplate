@@ -26,7 +26,7 @@ module.exports = {
     {
       files: ["*.ts", "*.vue"],
       parserOptions: {
-        parser: "typescript-eslint-parser"
+        parser: require.resolve("@typescript-eslint/parser")
       },
       plugins: ['vue', 'prettier', 'typescript']
     }
