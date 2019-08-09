@@ -1,5 +1,5 @@
-import uuid from 'uuid';
 import url from 'url';
+import uuid from 'uuid';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { clientId, clientSecret } from './constants/qiita';
 
