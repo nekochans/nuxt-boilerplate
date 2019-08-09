@@ -5,30 +5,22 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser'
   },
   extends: [
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended'
+    '@nuxtjs',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint'
   ],
   // required to lint *.vue files
   plugins: [
-    'vue',
-    'prettier'
+    '@typescript-eslint'
   ],
   // add your custom rules here
   rules: {
-    'no-console': 'off',
+    'no-unused-vars': 'off',
     'vue/max-attributes-per-line': 'off',
-    'prettier/prettier': ['error']
-  },
-  overrides: [
-    {
-      files: ["*.ts", "*.vue"],
-      parserOptions: {
-        parser: require.resolve("@typescript-eslint/parser")
-      },
-      plugins: ['vue', 'prettier', 'typescript']
-    }
-  ]
+    'prettier/prettier': ['error'],
+    'camelcase': 'off'
+  }
 };

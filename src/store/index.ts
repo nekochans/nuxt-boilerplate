@@ -20,7 +20,9 @@ export const state = () => ({});
 export const getters: GetterTree<State, RootState> = {};
 
 export const actions: Actions<State, RootState> = {
+  // eslint-disable-next-line require-await
   nuxtServerInit: async ({ dispatch }, { req }: Context) => {
+    // eslint-disable-next-line no-console
     console.log(req.headers);
   }
 };
