@@ -4,6 +4,7 @@ import consola from 'consola';
 import weather from './api/weather';
 import animals from './api/animals';
 import oauth from './auth/oauth';
+import config from '../nuxt.config';
 const router = Router();
 const { Nuxt, Builder } = require('nuxt');
 const host: string = process.env.HOST || '127.0.0.1';
@@ -18,7 +19,6 @@ export default async function() {
   app.set('port', port);
 
   // Import and Set Nuxt.js options
-  const config = require('../../nuxt.config.js');
   config.dev = !(process.env.NODE_ENV === 'production');
 
   // Init Nuxt.js
