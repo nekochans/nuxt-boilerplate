@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
 import consola from 'consola';
+import config from '../nuxt.config';
 import weather from './api/weather';
 import animals from './api/animals';
 import oauth from './auth/oauth';
@@ -18,7 +19,6 @@ export default async function() {
   app.set('port', port);
 
   // Import and Set Nuxt.js options
-  const config = require('../../nuxt.config.js');
   config.dev = !(process.env.NODE_ENV === 'production');
 
   // Init Nuxt.js
@@ -39,6 +39,7 @@ export default async function() {
   // Listen the server
   app.listen(port, host, (error: Error) => {
     if (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       throw error;
     }

@@ -1,4 +1,4 @@
-import { mutations } from '../../../../../src/store/counter';
+import { mutations } from '../../../../../../src/store/counter';
 const { DECREMENT } = mutations;
 
 describe('store/counter/actions/increment', () => {

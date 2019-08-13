@@ -1,4 +1,4 @@
-import { actions } from '../../../../../src/store/counter';
+import { actions } from '../../../../../../src/store/counter';
 
 jest.mock('axios');
 

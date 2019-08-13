@@ -22,9 +22,11 @@
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
     "nuxt": "^2.8.1",
+    "ts-node": "^8.3.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@nuxt/typescript": "^2.8.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@types/cookie-parser": "^1.4.1",
     "@types/eslint": "^4.16.7",
@@ -49,7 +51,6 @@
     "prettier": "1.18.2",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
-    "ts-node": "^8.3.0",
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.5.3",
     "vue-jest": "^3.0.4"

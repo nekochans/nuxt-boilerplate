@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Dog from '../../../src/components/Dog.vue';
+import Dog from '../../../../src/components/Dog.vue';
 
 describe('🐶', () => {
   it('should be created a Vue instance', () => {
