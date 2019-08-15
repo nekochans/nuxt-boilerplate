@@ -8,9 +8,16 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+  props: {
+    propsMessage: {
+      type: String,
+      default: '🐶',
+      required: false
+    }
+  },
   data() {
     return {
-      message: '🐶'
+      message: this.propsMessage
     };
   }
 });
