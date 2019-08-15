@@ -1,6 +1,6 @@
+import { storiesOf } from '@storybook/vue';
 // @ts-ignore
 import Cat from '@/components/Cat.vue';
-import { storiesOf } from '@storybook/vue';
 
 storiesOf('Cat', module)
   .add('default', () => ({
