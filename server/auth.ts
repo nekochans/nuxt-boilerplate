@@ -43,9 +43,9 @@ export const issueAccessToken = (
     });
 };
 
-export const sessionIdCookieName = () => 'sessionId';
+export const accessTokenCookieName = () => 'QIITA_ACCESS_TOKEN';
 
-export const authorizationStateCookieName = () => 'authorizationState';
+export const authorizationStateCookieName = () => 'AUTHORIZATION_STATE';
 
 export const redirectAuthorizedUrl = () => {
   return appUrl();

@@ -5,7 +5,7 @@ import {
   createAuthorizationUrl,
   issueAccessToken,
   redirectAuthorizedUrl,
-  sessionIdCookieName
+  accessTokenCookieName
 } from '../auth';
 
 const router = Router();
@@ -21,14 +21,14 @@ router.get('/request', (req: Request, res: Response) => {
 });
 
 router.get('/callback', async (req: Request, res: Response) => {
-  if (req.cookies.authorizationState == null) {
+  if (req.cookies[authorizationStateCookieName()] == null) {
     return res
       .status(400)
       .send()
       .end();
   }
 
-  if (req.cookies.authorizationState !== req.query.state) {
+  if (req.cookies[authorizationStateCookieName()] !== req.query.state) {
     return res
       .status(400)
       .send()
@@ -44,7 +44,7 @@ router.get('/callback', async (req: Request, res: Response) => {
 
   await issueAccessToken(req.query.code)
     .then(tokenResponse => {
-      res.cookie(sessionIdCookieName(), tokenResponse.token, {
+      res.cookie(accessTokenCookieName(), tokenResponse.token, {
         path: '/',
         httpOnly: true
       });
