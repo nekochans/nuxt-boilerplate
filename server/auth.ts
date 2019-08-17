@@ -1,7 +1,7 @@
 import url from 'url';
 import uuid from 'uuid';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { clientId, clientSecret } from './constants/qiita';
+import { appUrl, clientId, clientSecret } from './constants/qiita';
 
 export const createAuthorizationState = (): string => {
   return uuid.v4();
@@ -41,4 +41,12 @@ export const issueAccessToken = (
     .catch((error: AxiosError) => {
       return Promise.reject(error);
     });
+};
+
+export const sessionIdCookieName = () => 'sessionId';
+
+export const authorizationStateCookieName = () => 'authorizationState';
+
+export const redirectAuthorizedUrl = () => {
+  return appUrl();
 };

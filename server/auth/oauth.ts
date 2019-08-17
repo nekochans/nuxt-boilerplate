@@ -1,15 +1,18 @@
 import { Router, Request, Response } from 'express';
 import {
+  authorizationStateCookieName,
   createAuthorizationState,
   createAuthorizationUrl,
-  issueAccessToken
+  issueAccessToken,
+  redirectAuthorizedUrl,
+  sessionIdCookieName
 } from '../auth';
 
 const router = Router();
 
 router.get('/request', (req: Request, res: Response) => {
   const authorizationState = createAuthorizationState();
-  res.cookie('authorizationState', authorizationState, {
+  res.cookie(authorizationStateCookieName(), authorizationState, {
     path: '/',
     httpOnly: true
   });
@@ -19,23 +22,36 @@ router.get('/request', (req: Request, res: Response) => {
 
 router.get('/callback', async (req: Request, res: Response) => {
   if (req.cookies.authorizationState == null) {
-    // TODO 何らかのエラー処理を行う
+    return res
+      .status(400)
+      .send()
+      .end();
   }
 
   if (req.cookies.authorizationState !== req.query.state) {
-    // TODO stateが一致しない場合は何らかのエラー処理を行う
+    return res
+      .status(400)
+      .send()
+      .end();
   }
 
   if (req.query.code == null) {
-    // TODO 認可コードが含まれない場合は何らかのエラー処理を行う
+    return res
+      .status(400)
+      .send()
+      .end();
   }
 
   await issueAccessToken(req.query.code)
     .then(tokenResponse => {
-      // TODO 仮実装なので後でログイン後のページにredirectするように変更する
-      return res
-        .status(200)
-        .json({ code: req.query.code, token: tokenResponse.token });
+      res.cookie(sessionIdCookieName(), tokenResponse.token, {
+        path: '/',
+        httpOnly: true
+      });
+
+      res.clearCookie(authorizationStateCookieName());
+
+      return res.redirect(redirectAuthorizedUrl());
     })
     .catch(error => {
       return res
