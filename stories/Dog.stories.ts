@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/vue';
+import dogTestData from './dogTestData';
 // @ts-ignore
 import Dog from '@/components/Dog.vue';
 
@@ -9,5 +10,5 @@ storiesOf('Dog', module)
   }))
   .add('with props', () => ({
     components: { Dog },
-    template: '<Dog propsMessage="🐶🐶🐶" />'
+    template: `<Dog propsMessage=${dogTestData.message} />`
   }));
