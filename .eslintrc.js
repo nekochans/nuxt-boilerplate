@@ -21,6 +21,11 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'vue/max-attributes-per-line': 'off',
+    'vue/html-self-closing': ['error', {
+      'html': {
+        'void': 'always',
+      }
+    }],
     'prettier/prettier': ['error'],
     'camelcase': 'off'
   }
