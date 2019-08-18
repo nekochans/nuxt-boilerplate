@@ -5,5 +5,15 @@ import Profile from '@/components/Profile.vue';
 
 storiesOf('Profile', module).add('with props', () => ({
   components: { Profile },
-  template: `<Profile qiita-id=${profileTestData.qiitaId} qiita-name=${profileTestData.qiitaName} qiita-profile-image-url=${profileTestData.qiitaProfileImageUrl} qiita-description=${profileTestData.qiitaDescription} />`
+  data() {
+    return {
+      qiitaProfile: {
+        id: profileTestData.id,
+        name: profileTestData.name,
+        imageUrl: profileTestData.imageUrl,
+        description: profileTestData.description
+      }
+    };
+  },
+  template: `<Profile :qiita-profile="qiitaProfile" />`
 }));
