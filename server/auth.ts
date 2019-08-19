@@ -48,5 +48,5 @@ export const accessTokenCookieName = () => 'QIITA_ACCESS_TOKEN';
 export const authorizationStateCookieName = () => 'AUTHORIZATION_STATE';
 
 export const redirectAuthorizedUrl = () => {
-  return appUrl();
+  return `${appUrl()}/my`;
 };

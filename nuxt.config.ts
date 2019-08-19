@@ -3,7 +3,25 @@ import NuxtConfiguration from '@nuxt/config';
 const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src',
-
+  env: {
+    apiUrl: process.env.APP_URL || 'http://localhost:3000'
+  },
+  router: {
+    middleware: ['authCookie', 'redirect'],
+    extendRoutes(routes: any, resolve) {
+      routes.push({
+        name: 'original_error',
+        path: '/error',
+        props: true,
+        component: resolve(__dirname, 'src/pages/error.vue')
+      });
+    }
+  },
+  render: {
+    compressor: (req, res, next) => {
+      next();
+    }
+  },
   /*
    ** Headers of the page
    */
