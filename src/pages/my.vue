@@ -1,30 +1,24 @@
 <template>
   <div class="container">
-    <profile :qiita-profile="profile" />
+    <profile :qiita-profile="authorizedUser()" />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
+import { mapGetters } from 'vuex';
 import Profile from '../components/Profile.vue';
+import { NuxtContext } from '../types/index';
 
 export default Vue.extend({
   components: {
     Profile
   },
-  data() {
-    const qiitaProfile = {
-      id: 'qiita',
-      name: 'Qiitaキータ',
-      imageUrl:
-        'https://qiita-image-store.s3.amazonaws.com/0/88/profile-images/1512392618',
-      description:
-        'Qiita公式アカウントです。Qiitaに関するお問い合わせに反応したり、お知らせなどを発信しています。'
-    };
-
-    return {
-      profile: qiitaProfile
-    };
+  computed: {
+    ...mapGetters('qiita', ['authorizedUser'])
+  },
+  async fetch({ store }: NuxtContext) {
+    await store.dispatch('qiita/fetchUser');
   }
 });
 </script>

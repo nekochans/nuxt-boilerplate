@@ -43,6 +43,33 @@ export const issueAccessToken = (
     });
 };
 
+interface FetchAuthenticatedUserRequest {
+  accessToken: string;
+}
+
+interface FetchAuthenticatedUserResponse {
+  id: string;
+  name: string;
+  profile_image_url: string;
+  description: string;
+}
+
+export const fetchAuthenticatedUser = (
+  request: FetchAuthenticatedUserRequest
+): Promise<FetchAuthenticatedUserResponse> => {
+  return axios
+    .get<FetchAuthenticatedUserResponse>(
+      'https://qiita.com/api/v2/authenticated_user',
+      { headers: { Authorization: `Bearer ${request.accessToken}` } }
+    )
+    .then((axiosResponse: AxiosResponse) => {
+      return Promise.resolve(axiosResponse.data);
+    })
+    .catch((axiosError: AxiosError) => {
+      return Promise.reject(axiosError);
+    });
+};
+
 export const accessTokenCookieName = () => 'QIITA_ACCESS_TOKEN';
 
 export const authorizationStateCookieName = () => 'AUTHORIZATION_STATE';
