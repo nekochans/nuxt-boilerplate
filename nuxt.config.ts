@@ -4,7 +4,7 @@ const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src',
   env: {
-    apiUrl: process.env.APP_URL || 'http://localhost:3000'
+    appUrl: process.env.APP_URL || 'http://localhost:3000'
   },
   router: {
     middleware: ['authCookie', 'redirect'],
