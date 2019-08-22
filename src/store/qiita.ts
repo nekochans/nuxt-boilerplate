@@ -1,7 +1,7 @@
 import { ActionTree, MutationTree, GetterTree, ActionContext } from 'vuex';
+import { fetchQiitaUser } from '../infrastructure/api/qiita';
 import { RootState } from '~/store/index';
 import { QiitaUser } from '~/domain/qiita';
-import { fetchQiitaUser } from '../infrastructure/api/qiita';
 
 export interface State {
   accessToken: string;
