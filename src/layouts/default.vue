@@ -13,6 +13,9 @@
             <a class="button is-light">
               <nuxt-link to="/counter">Counter</nuxt-link>
             </a>
+            <a class="button is-light">
+              <nuxt-link to="/my">Myページ</nuxt-link>
+            </a>
           </div>
         </div>
       </div>

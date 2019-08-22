@@ -1,7 +1,7 @@
 import url from 'url';
 import uuid from 'uuid';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { clientId, clientSecret } from './constants/qiita';
+import { appUrl, clientId, clientSecret } from './constants/qiita';
 
 export const createAuthorizationState = (): string => {
   return uuid.v4();
@@ -41,4 +41,39 @@ export const issueAccessToken = (
     .catch((error: AxiosError) => {
       return Promise.reject(error);
     });
+};
+
+interface FetchAuthenticatedUserRequest {
+  accessToken: string;
+}
+
+interface FetchAuthenticatedUserResponse {
+  id: string;
+  name: string;
+  profile_image_url: string;
+  description: string;
+}
+
+export const fetchAuthenticatedUser = (
+  request: FetchAuthenticatedUserRequest
+): Promise<FetchAuthenticatedUserResponse> => {
+  return axios
+    .get<FetchAuthenticatedUserResponse>(
+      'https://qiita.com/api/v2/authenticated_user',
+      { headers: { Authorization: `Bearer ${request.accessToken}` } }
+    )
+    .then((axiosResponse: AxiosResponse) => {
+      return Promise.resolve(axiosResponse.data);
+    })
+    .catch((axiosError: AxiosError) => {
+      return Promise.reject(axiosError);
+    });
+};
+
+export const accessTokenCookieName = () => 'QIITA_ACCESS_TOKEN';
+
+export const authorizationStateCookieName = () => 'AUTHORIZATION_STATE';
+
+export const redirectAuthorizedUrl = () => {
+  return `${appUrl()}/my`;
 };

@@ -9,3 +9,7 @@ export const clientSecret = (): string => {
     ? process.env.QIITA_CLIENT_SECRET
     : '';
 };
+
+export const appUrl = (): string => {
+  return typeof process.env.APP_URL === 'string' ? process.env.APP_URL : '';
+};

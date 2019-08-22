@@ -4,6 +4,7 @@ import consola from 'consola';
 import config from '../nuxt.config';
 import weather from './api/weather';
 import animals from './api/animals';
+import qiita from './api/qiita';
 import oauth from './auth/oauth';
 const router = Router();
 const { Nuxt, Builder } = require('nuxt');
@@ -12,6 +13,7 @@ const port: number = Number(process.env.PORT) || 3000;
 
 router.use(weather);
 router.use(animals);
+router.use(qiita);
 router.use(oauth);
 
 export default async function() {
