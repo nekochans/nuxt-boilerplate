@@ -1,8 +1,11 @@
 import { createLocalVue } from '@vue/test-utils';
 import { cloneDeep } from 'lodash';
 import Vuex from 'vuex';
-import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import { httpClient } from '../../../../../../src/infrastructure/api/qiita';
 import { actions, mutations } from '../../../../../../src/store/qiita';
+
+const mockAxios = new MockAdapter(httpClient);
 
 const state = {
   accessToken: ''
@@ -15,8 +18,6 @@ const initStore = () => {
     actions
   });
 };
-
-jest.mock('axios');
 
 describe('store/qiita/actions/fetchUser', () => {
   // TODO ts-ignoreで誤魔化している箇所が多いので時間がある時に修正する
@@ -35,22 +36,17 @@ describe('store/qiita/actions/fetchUser', () => {
 
   it('should execute the fetchUser action', async () => {
     const mockResponse = {
-      data: {
-        id: 'keitakn',
-        name: 'keita koga',
-        imageUrl:
-          'https://qiita-image-store.s3.amazonaws.com/0/71899/profile-images/1473698980',
-        description: '東京でバックエンドエンジニアやってます。'
-      }
+      id: 'keitakn',
+      name: 'keita koga',
+      imageUrl:
+        'https://qiita-image-store.s3.amazonaws.com/0/71899/profile-images/1473698980',
+      description: '東京でバックエンドエンジニアやってます。'
     };
 
-    // @ts-ignore
-    axios.get.mockResolvedValue(mockResponse);
+    mockAxios.onGet('/qiita/users').reply(200, mockResponse);
 
-    // @ts-ignore
     await store.dispatch('fetchUser');
 
-    // @ts-ignore
-    expect(store.state.user).toStrictEqual(mockResponse.data);
+    expect(store.state.user).toStrictEqual(mockResponse);
   });
 });
