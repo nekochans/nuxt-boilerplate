@@ -5,5 +5,6 @@ describe('Logo', () => {
   it('should be created a Vue instance', () => {
     const wrapper = mount(Logo);
     expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

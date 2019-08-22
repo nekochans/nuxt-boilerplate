@@ -6,6 +6,6 @@ describe('🐶', () => {
   it('should be created a Vue instance', () => {
     const message = dogTestData.message;
     const wrapper = shallowMount(Dog, { propsData: { propsMessage: message } });
-    expect(wrapper.text()).toMatch(message);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

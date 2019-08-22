@@ -6,6 +6,6 @@ describe('🐱', () => {
   it('should be created a Vue instance', () => {
     const message = catTestData.message;
     const wrapper = shallowMount(Cat, { propsData: { propsMessage: message } });
-    expect(wrapper.text()).toMatch(message);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
