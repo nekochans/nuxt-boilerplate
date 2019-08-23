@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import catTestData from '../test/src/unit/components/catTestData';
+import catTestData from '../test/unit/src/components/catTestData';
 // @ts-ignore
 import Cat from '@/components/Cat.vue';
 

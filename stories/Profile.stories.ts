@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import profileTestData from '../test/src/unit/components/profileTestData';
+import profileTestData from '../test/unit/src/components/profileTestData';
 // @ts-ignore
 import Profile from '@/components/Profile.vue';
 
