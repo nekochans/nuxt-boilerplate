@@ -13,6 +13,7 @@
     "format": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "test": "jest --config=jest.config.js",
     "test:coverage": "jest --config=jest.config.js --collectCoverage=true",
+    "test:e2e": "testcafe chrome test/e2e/pages/*.ts",
     "precommit": "npm run lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -65,6 +66,7 @@
     "lodash": "^4.17.15",
     "nodemon": "^1.19.1",
     "prettier": "1.18.2",
+    "testcafe": "^1.4.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "tsconfig-paths": "^3.8.0",
