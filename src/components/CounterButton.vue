@@ -1,9 +1,17 @@
 <template>
   <div>
-    <button class="button is-info counter-button" @click="increment">
+    <button
+      class="button is-info counter-button"
+      data-test="increment"
+      @click="increment"
+    >
       increment
     </button>
-    <button class="button is-danger counter-button" @click="decrement">
+    <button
+      class="button is-danger counter-button"
+      data-test="decrement"
+      @click="decrement"
+    >
       decrement
     </button>
   </div>
