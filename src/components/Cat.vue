@@ -9,15 +9,15 @@ import Vue from 'vue';
 
 export default Vue.extend({
   props: {
-    propsMessage: {
-      type: String,
-      default: '🐱',
+    repeatNumber: {
+      type: Number,
+      default: 1,
       required: false
     }
   },
   data() {
     return {
-      message: this.propsMessage
+      message: '🐱'.repeat(this.repeatNumber)
     };
   }
 });

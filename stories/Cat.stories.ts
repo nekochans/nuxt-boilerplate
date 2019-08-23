@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
-import catTestData from './catTestData';
 // @ts-ignore
 import Cat from '@/components/Cat.vue';
+import catTestData from '../test/src/unit/components/catTestData';
 
 storiesOf('Cat', module)
-  .add('default', () => ({
+  .add('should be displayed 1 times', () => ({
     components: { Cat },
     template: '<Cat />'
   }))
-  .add('with props', () => ({
+  .add('should be displayed 3 times', () => ({
     components: { Cat },
-    template: `<Cat propsMessage=${catTestData.message} />`
+    template: `<Cat repeatNumber=${catTestData.repeatNumber} />`
   }));
