@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 // @ts-ignore
-import Cat from '@/components/Cat.vue';
 import catTestData from '../test/src/unit/components/catTestData';
+import Cat from '@/components/Cat.vue';
 
 storiesOf('Cat', module)
   .add('should be displayed 1 times', () => ({

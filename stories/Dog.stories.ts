@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 // @ts-ignore
-import Dog from '@/components/Dog.vue';
 import dogTestData from '../test/src/unit/components/dogTestData';
+import Dog from '@/components/Dog.vue';
 
 storiesOf('Dog', module)
   .add('should be displayed 1 times', () => ({

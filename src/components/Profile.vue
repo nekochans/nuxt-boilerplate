@@ -31,7 +31,7 @@ export default Vue.extend({
   props: {
     qiitaProfile: {
       type: Object,
-      required: true,
+      required: false,
       default() {
         return {
           id: 'qiita',

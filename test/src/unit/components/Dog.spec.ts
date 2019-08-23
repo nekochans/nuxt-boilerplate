@@ -9,7 +9,9 @@ describe('🐶', () => {
   });
 
   it('should be displayed 3 times', () => {
-    const wrapper = shallowMount(Dog, { propsData: { repeatNumber: dogTestData.repeatNumber } });
+    const wrapper = shallowMount(Dog, {
+      propsData: { repeatNumber: dogTestData.repeatNumber }
+    });
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
