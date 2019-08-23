@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue';
-// @ts-ignore
 import dogTestData from '../test/src/unit/components/dogTestData';
+// @ts-ignore
 import Dog from '@/components/Dog.vue';
 
 storiesOf('Dog', module)
