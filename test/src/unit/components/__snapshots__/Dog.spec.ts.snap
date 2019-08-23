@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`🐶 should be displayed 1 times 1`] = `
+"<div class=\\"dog\\">
+  🐶
+</div>"
+`;
+
+exports[`🐶 should be displayed 3 times 1`] = `
+"<div class=\\"dog\\">
+  🐶🐶🐶
+</div>"
+`;

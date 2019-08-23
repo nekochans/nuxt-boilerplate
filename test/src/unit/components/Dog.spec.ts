@@ -1,11 +1,17 @@
 import { shallowMount } from '@vue/test-utils';
 import Dog from '../../../../src/components/Dog.vue';
-import dogTestData from '../../../../stories/dogTestData';
+import dogTestData from './dogTestData';
 
 describe('🐶', () => {
-  it('should be created a Vue instance', () => {
-    const message = dogTestData.message;
-    const wrapper = shallowMount(Dog, { propsData: { propsMessage: message } });
-    expect(wrapper.text()).toMatch(message);
+  it('should be displayed 1 times', () => {
+    const wrapper = shallowMount(Dog);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should be displayed 3 times', () => {
+    const wrapper = shallowMount(Dog, {
+      propsData: { repeatNumber: dogTestData.repeatNumber }
+    });
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

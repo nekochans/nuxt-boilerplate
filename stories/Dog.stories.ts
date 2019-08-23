@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
-import dogTestData from './dogTestData';
+import dogTestData from '../test/src/unit/components/dogTestData';
 // @ts-ignore
 import Dog from '@/components/Dog.vue';
 
 storiesOf('Dog', module)
-  .add('default', () => ({
+  .add('should be displayed 1 times', () => ({
     components: { Dog },
     template: '<Dog />'
   }))
-  .add('with props', () => ({
+  .add('should be displayed 3 times', () => ({
     components: { Dog },
-    template: `<Dog propsMessage=${dogTestData.message} />`
+    template: `<Dog repeatNumber=${dogTestData.repeatNumber} />`
   }));
