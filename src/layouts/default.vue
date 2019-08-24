@@ -9,7 +9,9 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-light" href="/oauth/request">Qiitaでログイン</a>
+            <a class="button is-light" href="/oauth/request" data-test="login">
+              Qiitaでログイン
+            </a>
             <a class="button is-light">
               <nuxt-link to="/counter">Counter</nuxt-link>
             </a>
