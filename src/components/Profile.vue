@@ -4,7 +4,11 @@
       <div class="media">
         <div class="media-left">
           <figure class="image is-128x128">
-            <img :src="profile.imageUrl" alt="Placeholder image" />
+            <img
+              :src="profile.imageUrl"
+              alt="Placeholder image"
+              data-test="profile-image-url"
+            />
           </figure>
         </div>
         <div class="media-content">
