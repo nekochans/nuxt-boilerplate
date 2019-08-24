@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import dogTestData from '../test/src/unit/components/dogTestData';
+import dogTestData from '../test/unit/src/components/dogTestData';
 // @ts-ignore
 import Dog from '@/components/Dog.vue';
 

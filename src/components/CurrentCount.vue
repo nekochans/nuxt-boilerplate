@@ -1,5 +1,5 @@
 <template>
-  <div class="current-count">
+  <div class="current-count" data-test="current-count">
     {{ prefixMessage() }}
     {{ currentCounter().count }}
     {{ suffixMessage() }}

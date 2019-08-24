@@ -5,8 +5,9 @@ module.exports = {
     'src/middleware/*.{ts,tsx,vue}',
     'src/pages/*.{ts,tsx,vue}',
     'src/plugins/*.{ts,tsx,vue}',
-    'src/server/*.{ts,tsx,vue}',
-    'src/store/*.{ts,tsx,vue}'
+    'src/store/*.{ts,tsx,vue}',
+    'src/domain/*.{ts,tsx,vue}',
+    'server/**/*.{ts,tsx,vue}'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
