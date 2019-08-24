@@ -1,6 +1,10 @@
 import { Context, Middleware } from '@nuxt/types';
 
-const redirectMiddleware: Middleware = ({ store, redirect, route }: Context) => {
+const redirectMiddleware: Middleware = ({
+  store,
+  redirect,
+  route
+}: Context) => {
   const notRequiredAuthorization = ['/', '/counter'];
 
   if (notRequiredAuthorization.includes(route.path)) {
