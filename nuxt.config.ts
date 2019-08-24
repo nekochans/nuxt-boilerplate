@@ -1,13 +1,14 @@
-import NuxtConfiguration from '@nuxt/config';
+import { Configuration } from '@nuxt/types';
 
-const nuxtConfig: NuxtConfiguration = {
+const nuxtConfig: Configuration = {
+  buildModules: ['@nuxt/typescript-build'],
   mode: 'universal',
   srcDir: 'src',
   env: {
     appUrl: process.env.APP_URL || 'http://localhost:3000'
   },
   router: {
-    middleware: ['authCookie', 'redirect'],
+    middleware: ['authCookieMiddleware', 'redirectMiddleware'],
     extendRoutes(routes: any, resolve) {
       routes.push({
         name: 'original_error',

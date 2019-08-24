@@ -1,4 +1,4 @@
-import { Context } from '@nuxt/vue-app';
+import { Context } from '@nuxt/types';
 import { GetterTree, ActionContext, ActionTree } from 'vuex';
 import Cookies from 'universal-cookie';
 import { State as CounterState } from './counter';

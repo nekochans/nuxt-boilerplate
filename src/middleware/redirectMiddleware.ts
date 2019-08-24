@@ -1,6 +1,6 @@
-import { NuxtContext } from '~/types';
+import { Context, Middleware } from '@nuxt/types';
 
-export default function({ store, redirect, route }: NuxtContext) {
+const redirectMiddleware: Middleware = ({ store, redirect, route }: Context) => {
   const notRequiredAuthorization = ['/', '/counter'];
 
   if (notRequiredAuthorization.includes(route.path)) {
@@ -10,4 +10,6 @@ export default function({ store, redirect, route }: NuxtContext) {
   if (store.getters['qiita/isAuthorized']() === false) {
     return redirect('/');
   }
-}
+};
+
+export default redirectMiddleware;
