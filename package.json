@@ -43,7 +43,6 @@
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
-    "@types/lodash": "^4.14.137",
     "@types/node": "^12.7.2",
     "@types/prettier": "^1.18.2",
     "@types/storybook__vue": "^5.0.2",
@@ -62,14 +61,11 @@
     "eslint-config-prettier": "^6.1.0",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-prettier": "3.1.0",
-    "fork-ts-checker-webpack-plugin": "^1.5.0",
     "jest": "^24.9.0",
-    "lodash": "^4.17.15",
     "prettier": "1.18.2",
     "testcafe": "^1.4.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
-    "tsconfig-paths": "^3.8.0",
     "typescript": "^3.5.3",
     "vue-jest": "^3.0.4"
   }
