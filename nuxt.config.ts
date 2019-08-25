@@ -19,12 +19,12 @@ const nuxtConfig: Configuration = {
     }
   },
   render: {
-    compressor: (req, res, next) => {
+    compressor: (_req, _res, next) => {
       next();
     }
   },
   serverMiddleware: [
-    { path: '/api', handler: './server/bff'},
+    { path: '/api', handler: './server/bff' },
     { path: '/oauth', handler: './server/bff' }
   ],
   /*

@@ -10,51 +10,51 @@ import {
 
 const router = Router();
 
-router.get('/request', (req: Request, res: Response) => {
+router.get('/request', (_req: Request, _res: Response) => {
   const authorizationState = createAuthorizationState();
-  res.cookie(authorizationStateCookieName(), authorizationState, {
+  _res.cookie(authorizationStateCookieName(), authorizationState, {
     path: '/',
     httpOnly: true
   });
 
-  return res.redirect(302, createAuthorizationUrl(authorizationState));
+  return _res.redirect(302, createAuthorizationUrl(authorizationState));
 });
 
-router.get('/callback', async (req: Request, res: Response) => {
-  if (req.cookies[authorizationStateCookieName()] == null) {
-    return res
+router.get('/callback', async (_req: Request, _res: Response) => {
+  if (_req.cookies[authorizationStateCookieName()] == null) {
+    return _res
       .status(400)
       .send()
       .end();
   }
 
-  if (req.cookies[authorizationStateCookieName()] !== req.query.state) {
-    return res
+  if (_req.cookies[authorizationStateCookieName()] !== _req.query.state) {
+    return _res
       .status(400)
       .send()
       .end();
   }
 
-  if (req.query.code == null) {
-    return res
+  if (_req.query.code == null) {
+    return _res
       .status(400)
       .send()
       .end();
   }
 
-  await issueAccessToken(req.query.code)
+  await issueAccessToken(_req.query.code)
     .then(tokenResponse => {
-      res.cookie(accessTokenCookieName(), tokenResponse.token, {
+      _res.cookie(accessTokenCookieName(), tokenResponse.token, {
         path: '/',
         httpOnly: true
       });
 
-      res.clearCookie(authorizationStateCookieName());
+      _res.clearCookie(authorizationStateCookieName());
 
-      return res.redirect(redirectAuthorizedUrl());
+      return _res.redirect(redirectAuthorizedUrl());
     })
     .catch(error => {
-      return res
+      return _res
         .status(error.response.status)
         .json({ message: error.response.data.message });
     });
