@@ -1,5 +1,7 @@
 # nuxt-boilerplate
 
+[![CircleCI](https://circleci.com/gh/nekochans/nuxt-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/nekochans/nuxt-boilerplate/tree/master)
+
 Nuxt.js Boilerplate用プロジェクトです。
 
 ## Getting Started
