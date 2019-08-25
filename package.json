@@ -5,10 +5,10 @@
   "author": "keitakn",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
+    "dev": "rm -rf .nuxt && rm -rf dist && nuxt-ts",
+    "build": "rm -rf .nuxt && rm -rf dist && nuxt-ts build",
     "start": "cross-env NODE_ENV=production nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "generate": "rm -rf .nuxt && rm -rf dist && nuxt-ts generate",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "format": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "test": "jest --config=jest.config.js",
