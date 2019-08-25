@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "strict": true,
+    "noEmit": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
