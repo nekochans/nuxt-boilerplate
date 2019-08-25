@@ -6,7 +6,7 @@ import {
   issueAccessToken,
   redirectAuthorizedUrl,
   accessTokenCookieName
-} from '../auth';
+} from '../../domain/auth';
 
 const router = Router();
 

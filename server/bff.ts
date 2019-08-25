@@ -1,9 +1,10 @@
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
-import weather from './api/weather';
-import animals from './api/animals';
-import qiita from './api/qiita';
-import oauth from './auth/oauth';
+import weather from './router/api/weather';
+import animals from './router/api/animals';
+import qiita from './router/api/qiita';
+import oauth from './router/auth/oauth';
+
 const router = Router();
 
 router.use(weather);

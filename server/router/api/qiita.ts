@@ -1,5 +1,5 @@
 import { Request, Response, Router, NextFunction } from 'express';
-import { fetchAuthenticatedUser } from '../auth';
+import { fetchAuthenticatedUser } from '../../domain/auth';
 
 const router = Router();
 

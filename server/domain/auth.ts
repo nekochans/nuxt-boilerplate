@@ -1,7 +1,7 @@
 import url from 'url';
 import uuid from 'uuid';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { appUrl, clientId, clientSecret } from './constants/qiita';
+import { appUrl, clientId, clientSecret } from '../constants/qiita';
 
 export const createAuthorizationState = (): string => {
   return uuid.v4();
