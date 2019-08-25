@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "strict": true,
+    "noEmit": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -27,7 +28,6 @@
     },
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/@nuxt/vue-app/types",
       "node_modules/@nuxt/types",
       "src/types"
     ],

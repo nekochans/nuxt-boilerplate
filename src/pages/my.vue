@@ -7,8 +7,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapGetters } from 'vuex';
+import { Context } from '@nuxt/types';
 import Profile from '../components/Profile.vue';
-import { NuxtContext } from '../types/index';
 
 export default Vue.extend({
   components: {
@@ -17,7 +17,7 @@ export default Vue.extend({
   computed: {
     ...mapGetters('qiita', ['authorizedUser'])
   },
-  async fetch({ store }: NuxtContext) {
+  async fetch({ store }: Context) {
     await store.dispatch('qiita/fetchUser');
   }
 });

@@ -1,6 +1,7 @@
 import Cookies from 'universal-cookie';
+import { Context, Middleware } from '@nuxt/types';
 
-export default ({ req, store }: any) => {
+const authCookieMiddleware: Middleware = ({ req, store }: Context) => {
   if (process.browser) {
     return;
   }
@@ -12,3 +13,5 @@ export default ({ req, store }: any) => {
     store.dispatch('qiita/saveAccessToken', { accessToken });
   }
 };
+
+export default authCookieMiddleware;
