@@ -1,14 +1,6 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true
-  },
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
-  },
   extends: [
-    '@nuxtjs',
+    '@nuxtjs/eslint-config-typescript',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint'
   ],
