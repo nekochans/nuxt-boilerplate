@@ -13,6 +13,7 @@
     "format": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "test": "jest --config=jest.config.js",
     "test:coverage": "jest --config=jest.config.js --collectCoverage=true",
+    "test:unit:ci": "jest --config=jest.config.js --runInBand",
     "test:e2e": "testcafe chrome test/e2e/pages/*.ts",
     "precommit": "npm run lint",
     "storybook": "start-storybook -p 6006",
