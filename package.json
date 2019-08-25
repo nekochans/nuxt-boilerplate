@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.1.11",
-    "@nuxtjs/eslint-config": "^1.1.2",
+    "@nuxtjs/eslint-config-typescript": "^0.1.2",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addons": "^5.1.11",
@@ -50,7 +50,6 @@
     "@types/uuid": "^3.4.5",
     "@types/webpack": "^4.39.0",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "axios-mock-adapter": "^1.17.0",
     "babel-core": "^7.0.0-bridge.0",

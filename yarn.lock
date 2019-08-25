@@ -1284,7 +1284,16 @@
   dependencies:
     bulma "^0.7.5"
 
-"@nuxtjs/eslint-config@^1.1.2":
+"@nuxtjs/eslint-config-typescript@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config-typescript/-/eslint-config-typescript-0.1.2.tgz#3fc8da779d76d4f2b73a4a252ef2069075384f71"
+  integrity sha512-X9fclYEN6cXWPgN/pY8/9QrJGntu4fUVgMOajVTXSu+tVMi8GGTt/kHbYvJB1/bxJh0mpW15WATo/PuxW7C2RA==
+  dependencies:
+    "@nuxtjs/eslint-config" "1.1.2"
+    "@typescript-eslint/eslint-plugin" "^1.13.0"
+    "@typescript-eslint/parser" "^1.13.0"
+
+"@nuxtjs/eslint-config@1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config/-/eslint-config-1.1.2.tgz#cde4c950014a781bcc34abbfef9c62546d8fc34c"
   integrity sha512-uKBdza1/Poz32gEodQ9MSW8M9CU4RPdvEiSLX5LWyavrbjhXW9iIbzJzSDlgMhD1QfQ5WrWv1iqL3Bh/ArbIgw==
