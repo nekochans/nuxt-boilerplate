@@ -5,7 +5,7 @@
   "author": "keitakn",
   "private": true,
   "scripts": {
-    "dev": "rm -rf .nuxt && rm -rf dist && nuxt-ts",
+    "dev": "rm -rf .nuxt && rm -rf dist && nodemon",
     "build": "rm -rf .nuxt && rm -rf dist && nuxt-ts build",
     "start": "cross-env NODE_ENV=production nuxt-ts start",
     "generate": "rm -rf .nuxt && rm -rf dist && nuxt-ts generate",
@@ -62,6 +62,7 @@
     "eslint-loader": "^3.0.0",
     "eslint-plugin-prettier": "3.1.0",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
     "prettier": "1.18.2",
     "testcafe": "^1.4.1",
     "ts-jest": "^24.0.2",
