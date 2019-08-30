@@ -18,4 +18,4 @@ bff.use(cookieParser());
 bff.use('/api', router);
 bff.use('/oauth', router);
 
-export default bff;
+module.exports = bff;
