@@ -16,6 +16,5 @@ const bff = express();
 
 bff.use(cookieParser());
 bff.use('/', router);
-bff.use('/', router);
 
 export default bff;
