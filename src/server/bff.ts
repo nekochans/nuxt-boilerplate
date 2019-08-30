@@ -15,6 +15,7 @@ router.use(oauth);
 const bff = express();
 
 bff.use(cookieParser());
-bff.use('/', router);
+bff.use('/api', router);
+bff.use('/oauth', router);
 
 export default bff;

@@ -23,10 +23,7 @@ const nuxtConfig: Configuration = {
       next();
     }
   },
-  serverMiddleware: [
-    { path: '/api', handler: './server/bff' },
-    { path: '/oauth', handler: './server/bff' }
-  ],
+  serverMiddleware: ['~/server/bff'],
   /*
    ** Headers of the page
    */
