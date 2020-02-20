@@ -23,7 +23,7 @@ const nuxtConfig: Configuration = {
       next();
     }
   },
-  serverMiddleware: ['./src/server/bff'],
+  serverMiddleware: ['server/bff'],
   /*
    ** Headers of the page
    */
